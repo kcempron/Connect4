@@ -11,8 +11,8 @@ class Board:
 		self.board = np.full_like(a = self.board, fill_value = "*")
 		print("board cleared!")
 
-	def set_piece(self, row: int, col: int) -> None:
-		self.board[row, col] = "X"
+	def set_piece(self, row: int, col: int, player: pl.Player) -> None:
+		self.board[row, col] = player.get_piece()
 
 	def get_board(self) -> np.ndarray:
 		return self.board
