@@ -59,6 +59,11 @@ Class Player:
   def get_piece()
 ```
 
-## Further Development
-If time permits, I would like to also add historical tracking of the game such that moves of each Game
-are tracked and replayable as all as keeping track of Player's win/loss history.
+## Further Development / Desired Optimizations
+- Have players just choose column to drop piece as opposed to choosing row, col.
+- Have option to select who starts game.
+- Create Board states for easier and faster testing
+- Build more robust test suite that can also validate on assertions of game constraints.
+- Expand test to validate against a wide range of board sizes.
+- Have historical tracking of the game such that moves can be replayed and recreated.
+- Personalize Player to track name, win history, and other meta data.
