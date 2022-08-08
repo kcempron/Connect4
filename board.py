@@ -12,7 +12,24 @@ class Board:
 		print("board cleared!")
 
 	def set_piece(self, row: int, col: int, player: pl.Player) -> None:
-		self.board[row, col] = player.get_piece()
+		self.board[row, col] = player.get_piece().name
+
+	def get_piece(self, row: int, col: int) -> str:
+		return self.board[row, col]
+
+	# TODO
+	def get_row(self, row: int) -> None:
+		return None
+
+	# TODO
+	def get_col(self, col: int) -> None:
+		return None
+
+	def get_diag_left (self, row: int, col: int) -> None:
+		return None
+
+	def get_diag_right (self, row: int, col: int) -> None:
+		return None
 
 	def get_board(self) -> np.ndarray:
 		return self.board

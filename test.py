@@ -18,3 +18,14 @@ if __name__ == "__main__":
 	print(board)
 	board.clear_board()
 	print(board)
+
+	# Test Basic Functionality of class Game
+	game = g.Game(4, 4, pl.Piece.X, pl.Piece.O)
+	game.start_game()
+	game.view_board()
+	game.set_piece(3, 0)
+	game.view_board()
+	game.set_piece(3, 1)
+	game.view_board()
+	game.set_piece(3, 1)
+	game.view_board()

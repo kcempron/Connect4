@@ -11,7 +11,7 @@ class Player:
 		self.piece = piece
 
 	def get_piece(self) -> Piece:
-		return self.piece.name
+		return self.piece
 
 	def __str__(self) -> str:
 		return "Player Piece: " + self.piece.name
