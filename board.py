@@ -1,21 +1,48 @@
-import player
+import numpy as np
+import player as pl
 
 # Provides the structure on which pieces are played within the constraints of the game.
 class Board:
-	def __init__(self) -> None:
-		return None
-
-	def create_board(self) -> None:
-		return None
+	# Visualize board as 2D Array.
+	def __init__(self, row: int, col: int) -> None:
+		self.board = Board.create_board(row, col)
 
 	def clear_board(self) -> None:
+		self.board = np.full_like(a = self.board, fill_value = "*")
+		print("board cleared!")
+
+	def set_piece(self, row: int, col: int, player: pl.Player) -> None:
+		self.board[row, col] = player.get_piece().name
+
+	def get_piece(self, row: int, col: int) -> str:
+		return self.board[row, col]
+
+	# TODO
+	def get_row(self, row: int) -> None:
 		return None
 
-	def set_piece(self) -> None:
+	# TODO
+	def get_col(self, col: int) -> None:
 		return None
 
-	def get_board(self) -> None:
+	def get_diag_left (self, row: int, col: int) -> None:
 		return None
 
-	def view_board(self) -> None:
+	def get_diag_right (self, row: int, col: int) -> None:
 		return None
+
+	def get_board(self) -> np.ndarray:
+		return self.board
+
+	def __str__(self) -> str:
+		return np.array2string(self.board)
+
+	### Utility functions go here ###
+	@staticmethod
+	def create_board(row: int, col: int) -> np.ndarray:
+		if row < 4 and col < 4:
+			raise Exception("Board must have row or column size be a minimum of 4 to allow game.")
+		else:
+			print("board created!")
+			return np.full(shape = (row, col), fill_value = "*", dtype = str)
+
